@@ -35,11 +35,11 @@ ENCRYPTION="--no-encryption"
 ################################################################################################
 
 #### LOCK FILE IMPLEMENTATION ####
-if [ -f /var/lock/duplicity ]; then
+if [ -f /var/tmp/duplicity ]; then
 	echo "Duplicity already running!"
 	exit
 else
-	touch /var/lock/duplicity
+	touch /var/tmp/duplicity
 fi
 
 case $1 in
