@@ -32,7 +32,12 @@ EDIRS="--exclude /porn
 # Encryption yes/no 
 ENCRYPTION="--no-encryption"
 #ENCRYPTION="--encrypt-key $ENCKEY --sign-key $SIGNKEY"
-################################################################################################
+
+####################################### CRON #################################################
+# Put something like this in cron
+# 30 3 * * 1-6    root    /root/backup.sh backup && /root/backup.sh rotate-force
+# 30 3 * * 7      root    /root/backup.sh full && /root/backup.sh rotate-force
+
 
 #### LOCK FILE IMPLEMENTATION ####
 if [ -f /var/tmp/duplicity ]; then
