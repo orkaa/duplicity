@@ -92,6 +92,13 @@ duplicity collection-status \
     $TARGET
 ;;
 
+"cleanup")
+duplicity cleanup \
+   $ENCRYPTION \
+   $SSH_OPTIONS \
+   $TARGET
+;;
+
 "help")
 echo -e $HELP
 ;;
