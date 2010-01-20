@@ -12,7 +12,7 @@ status to view current backup sets status "
 #export PASSPHRASE=''
 
 # How old should the backups be before deleted. 
-AGE=2W
+FULLBACKUPS="2"
 
 # Where to backup. Can be local or remote path.
 TARGET="file:///mnt/backup"
@@ -66,14 +66,14 @@ duplicity full \
 ;;
 
 "rotate-view") 
-duplicity remove-older-than $AGE \
+duplicity remove-all-but-n-full $FULLBACKUPS \
    $ENCRYPTION \
    $SSH_OPTIONS \
    $TARGET
 ;;
 
 "rotate-force") 
-duplicity remove-older-than $AGE \
+duplicity remove-all-but-n-full $FULLBACKUPS \
    $ENCRYPTION \
    $SSH_OPTIONS \
     --force \
