@@ -108,4 +108,4 @@ echo "Use help for usage tips"
 ;;
 esac
 ### clean up
-rm -f /var/lock/duplicity
+rm -f /var/tmp/duplicity
