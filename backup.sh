@@ -96,6 +96,7 @@ duplicity collection-status \
 duplicity cleanup \
    $ENCRYPTION \
    $SSH_OPTIONS \
+   --force \
    $TARGET
 ;;
 
