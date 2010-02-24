@@ -26,7 +26,7 @@ DIRS="--include /etc
 EDIRS="--exclude /porn
 	--exclude /proc"
 
-# Additional ssh options
+# Additional ssh options.
 #SSH_OPTIONS="--ssh-options=\"-oPort=1234\""
 
 # Encryption yes/no 
