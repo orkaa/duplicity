@@ -14,7 +14,7 @@ status to view current backup sets status "
 # How old should the backups be before deleted. 
 FULLBACKUPS="2"
 
-# Where to backup. Can be local or remote path.
+# Where to backup? Can be local or remote path.
 TARGET="file:///mnt/backup"
 #TARGET="scp://user@hostname//mnt/backup"
 
