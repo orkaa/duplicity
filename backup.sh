@@ -7,7 +7,7 @@ rotate-force to actually delete old sets\n
 status to view current backup sets status "
 ######################################## CONFIG ################################################
 ### The gpg key you want to use and a passphrase for it.
-#SIGNKEY=208D76D4
+#SIGNKEY=208V76D4
 #ENCKEY=$SIGNKEY
 #export PASSPHRASE=''
 
