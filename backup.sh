@@ -29,7 +29,7 @@ EDIRS="--exclude /porn
 # Additional ssh options.
 #SSH_OPTIONS="--ssh-options=\"-oPort=1234\""
 
-# Encryption yes/no 
+# Encryption yes/no ?
 ENCRYPTION="--no-encryption"
 #ENCRYPTION="--encrypt-key $ENCKEY --sign-key $SIGNKEY"
 
