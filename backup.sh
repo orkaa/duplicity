@@ -33,6 +33,9 @@ EDIRS="--exclude /porn
 ENCRYPTION="--no-encryption"
 #ENCRYPTION="--encrypt-key $ENCKEY --sign-key $SIGNKEY"
 
+# If you don't have enough space for temp files on /, use this.
+export TMPDIR=/var/duplicity_tmp
+
 ####################################### CRON #################################################
 # Put something like this in cron
 # 30 3 * * 1-6    root    /root/backup.sh backup && /root/backup.sh rotate-force
