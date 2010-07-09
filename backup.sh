@@ -36,12 +36,6 @@ ENCRYPTION="--no-encryption"
 # If you don't have enough space for temp files on /, use this.
 export TMPDIR=/var/duplicity_tmp
 
-####################################### CRON #################################################
-# Put something like this in cron
-# 30 3 * * 1-6    root    /root/backup.sh backup && /root/backup.sh rotate-force
-# 30 3 * * 7      root    /root/backup.sh full && /root/backup.sh rotate-force
-
-
 #### LOCK FILE IMPLEMENTATION ####
 if [ -f /var/tmp/duplicity ]; then
 	echo "Duplicity already running!"

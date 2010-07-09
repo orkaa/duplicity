@@ -1,0 +1,6 @@
+# Use this if you only want incremental backups.
+30 3 * * *    root    /root/duplicity/backup.sh backup && /root/duplicity/backup.sh rotate-force
+
+# Use this if you want occasional full backups.
+#30 3 * * *    root    /root/duplicity/backup.sh backup && /root/duplicity/backup.sh rotate-force
+#28 3 * * 7   root    /root/duplicity/backup.sh full && /root/duplicity/backup.sh rotate-force
