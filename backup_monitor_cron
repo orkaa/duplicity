@@ -1,0 +1,1 @@
+* */4 * * * 	root 	python /root/duplicity/monitor.py

@@ -1,5 +1,4 @@
 # This script is to be used with Zabbix monitoring. It writes "backup.log", each time it runs, which can be parsed with Zabbix. If everything is correct, log will contain this string: "Status: GOOD"
-# Put something like this to CRON: * */4 * * * root python /root/duplicity/monitor.py
 
 import subprocess
 import datetime
