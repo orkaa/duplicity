@@ -6,31 +6,23 @@ import sys
 
 ##### CONFIG #####
 # How many days can pass between backups
-DELTA = 2
+DELTA = 1
 ##################
 
 months = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6, 'Jul': 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12 }
-
-logfile = file('backup.log', 'w')
 
 try:
 	process = subprocess.Popen('./backup.sh status', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
 	output = process[0].split('\n')
 	stderr = process[1]
 	if stderr != "":
-		logfile.write('Something wrong with the backup script:\n%s\nStatus: BAD\n' % stderr)
-		logfile.close()
 		print stderr
 		sys.exit(1)	
 except Exception, e:
-	logfile.write('Something wrong with the backup script:\n%s\nStatus: BAD\n' % e)
-	logfile.close()
 	raise e
 	
 while True:
 	if len(output) < 1:
-		logfile.write('No backups so far.\n\nStatus: BAD\n')
-		logfile.close()
 		print "No backups so far."
 		sys.exit(1)	
 	line = output.pop().strip().split()
@@ -45,10 +37,11 @@ current_time = datetime.datetime.now()
 delta = datetime.timedelta(int(DELTA))
 
 if (current_time - backup_time) >= delta:
-	logfile.write('Backup did not complete in given time.\nLast good: %s\nStatus: BAD\n' % backup_time)
+	print("No recent backups. Last good: %s" % backup_time)
+elif (current_time - backup_time) <= delta:
+	logfile = file('backup.log', 'w')
+	logfile.write('Last successful backup: %s' % backup_time)	
 	logfile.close()
-	print "fail"
+	print('Last successful backup: %s' % backup_time)
 else:
-	logfile.write('Backup successful.\nLast good: %s\nStatus: GOOD\n' % backup_time)	
-	logfile.close()
-	print "good"
+	print("No recent backups. Last good: %s" % backup_time)
