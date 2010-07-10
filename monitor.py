@@ -1,4 +1,4 @@
-# This script is to be used with Zabbix monitoring. It writes "backup.log", each time it runs, which can be parsed with Zabbix. If everything is correct, log will contain this string: "Status: GOOD"
+# This script is to be used with Zabbix monitoring. It writes "backup.log", if backup is successful, which can be checked with Zabbix for a recent enough timestamp.
 
 import subprocess
 import datetime

@@ -36,6 +36,8 @@ ENCRYPTION="--no-encryption"
 # If you don't have enough space for temp files on /, use this.
 export TMPDIR=/var/duplicity_tmp
 
+#################### CONFIG END #############################################
+
 #### LOCK FILE IMPLEMENTATION ####
 if [ -f /var/tmp/duplicity ]; then
 	echo "Duplicity already running!"
