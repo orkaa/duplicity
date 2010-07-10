@@ -40,7 +40,7 @@ if (current_time - backup_time) >= delta:
 	print("No recent backups. Last good: %s" % backup_time)
 elif (current_time - backup_time) <= delta:
 	logfile = file('backup.log', 'w')
-	logfile.write('Last successful backup: %s' % backup_time)	
+	logfile.write('Last successful backup: %s\n' % backup_time)
 	logfile.close()
 	print('Last successful backup: %s' % backup_time)
 else:
