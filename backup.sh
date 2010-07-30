@@ -55,7 +55,7 @@ duplicity \
    $EDIRS \
    $DIRS \
    --exclude '**' / \
-   $TARGET
+   $TARGET > backup.log 2>&1
 ;;
 
 "full")    
@@ -66,7 +66,7 @@ duplicity full \
    $EDIRS \
    $DIRS \
    --exclude '**' / \
-   $TARGET
+   $TARGET > backup.log 2>&1
 ;;
 
 "rotate-view") 
