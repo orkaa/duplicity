@@ -33,6 +33,9 @@ EDIRS="--exclude /porn
 ENCRYPTION="--no-encryption"
 #ENCRYPTION="--encrypt-key $ENCKEY --sign-key $SIGNKEY"
 
+# LOG FILE
+LOGFILE="/root/duplicity/backup.log"
+
 # If you don't have enough space for temp files on /, use this.
 export TMPDIR=/var/duplicity_tmp
 
@@ -55,7 +58,7 @@ duplicity \
    $EDIRS \
    $DIRS \
    --exclude '**' / \
-   $TARGET > backup.log.tmp 2>&1
+   $TARGET > $LOGFILE.tmp 2>&1
 ;;
 
 "full")    
@@ -66,7 +69,7 @@ duplicity full \
    $EDIRS \
    $DIRS \
    --exclude '**' / \
-   $TARGET > backup.log.tmp 2>&1
+   $TARGET > $LOGFILE.tmp 2>&1
 ;;
 
 "rotate-view") 
@@ -111,4 +114,4 @@ esac
 rm -f /var/tmp/duplicity
 
 # Duplicity would empty backup.log for the time running. That's why we need a temporary file.
-mv backup.log.tmp backup.log
+mv $LOGFILE.tmp $LOGFILE
