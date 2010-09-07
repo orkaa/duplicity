@@ -58,7 +58,7 @@ duplicity \
    $EDIRS \
    $DIRS \
    --exclude '**' / \
-   $TARGET > $LOGFILE.tmp 2>&1
+   $TARGET > $LOGFILE.tmp 2>&1 && mv $LOGFILE.tmp $LOGFILE
 ;;
 
 "full")    
@@ -69,7 +69,7 @@ duplicity full \
    $EDIRS \
    $DIRS \
    --exclude '**' / \
-   $TARGET > $LOGFILE.tmp 2>&1
+   $TARGET > $LOGFILE.tmp 2>&1 && mv $LOGFILE.tmp $LOGFILE
 ;;
 
 "rotate-view") 
@@ -112,6 +112,3 @@ echo "Use help for usage tips"
 esac
 ### clean up
 rm -f /var/tmp/duplicity
-
-# Duplicity would empty backup.log for the time running. That's why we need a temporary file.
-mv $LOGFILE.tmp $LOGFILE
