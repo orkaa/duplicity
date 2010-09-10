@@ -34,10 +34,10 @@ ENCRYPTION="--no-encryption"
 #ENCRYPTION="--encrypt-key $ENCKEY --sign-key $SIGNKEY"
 
 # LOG FILE
-LOGFILE="/root/duplicity/backup.log"
+LOGFILE="/var/log/backup.log"
 
 # If you don't have enough space for temp files on /, use this.
-export TMPDIR=/var/duplicity_tmp
+#export TMPDIR=/var/duplicity_tmp
 
 #################### CONFIG END #############################################
 
